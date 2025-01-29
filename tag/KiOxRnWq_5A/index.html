@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>令牌 | Zero Geometry零度几何</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="http://discovery-ai.online/favicon.ico?v=1738153086223">
+<link rel="stylesheet" href="http://discovery-ai.online/styles/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="">
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="http://discovery-ai.online">
+        <img src="http://discovery-ai.online/images/avatar.png?v=1738153086223" class="site-logo">
+        <h1 class="site-title">Zero Geometry零度几何</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="http://discovery-ai.online/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <h2 class="current-tag">标签: 令牌</h2>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="http://discovery-ai.online/post/ru-he-zai-github-zhong-huo-qu-ge-ren-fang-wen-ling-pai/">
+                  <h2 class="post-title">如何在 GitHub 中获取个人访问令牌</h2>
+                </a>
+                <div class="post-date">
+                  2025-01-29
+                </div>
+                <div class="post-abstract">
+                  <p>个人访问令牌（Personal Access Token，简称 PAT）是用于验证 GitHub API 请求的密钥，类似于密码。你可以通过以下步骤生成一个令牌。</p>
+<h2 id="令牌的作用是什么">令牌的作用是什么？</h2>
+<p>通俗来讲，GitHub 的个人访问令牌（PAT）是一把“钥匙”，它可以用来打开和操作你的 GitHub 账户，特别是在你用工具、脚本或者其他软件访问 GitHub 时。</p>
+<h3 id="1-用于代替密码登录">1. 用于代替密码登录</h3>
+<p>如果你用 Git 命令行工具操作 GitHub，比如上传代码（git push）或者下载代码（git pull），GitHub 不再允许直接输入账户密码。令牌可以用来代替密码，确保这些操作的安全性。</p>
+<p>举个例子：当你在终端里执行 git push 上传代码时，GitHub 会提示你输入用户名和密码。如果使用令牌，你就把这个令牌当作密码输入就行了。比起用密码，这样更安全。</p>
+<h3 id="2-让工具和软件连接-github">2. 让工具和软件连接 GitHub</h3>
+<p>很多开发工具和服务，比如 VSCode、Jenkins、GitHub Actions、PyCharm 或者一些自动化脚本，都需要连接你的 GitHub 账户。用令牌可以让这些工具安全地访问你的账户，而不需要暴露你的真实密码。</p>
+<h3 id="3-控制权限更加安全">3. 控制权限，更加安全</h3>
+<p>一个令牌可以被设置成只允许做特定的事情。比如，你可以创建一个令牌，只允许它查看仓库，而不允许它删除或修改代码。这就像你给别人一把“客人钥匙”，这把钥匙只能开客房的门，而不能开主卧或者保险箱。</p>
+<h3 id="4-设置有效期防止滥用">4. 设置有效期，防止滥用</h3>
+<p>令牌可以设置一个“到期时间”。比如，你可以设置令牌只有效 30 天。这样，如果令牌被泄露或者你不再需要它了，过期后就自动失效了。这比用密码更加安全。</p>
+<h3 id="5-api-操作的身份验证">5. API 操作的身份验证</h3>
+<p>如果你是程序员，想写脚本自动完成一些工作，比如批量创建仓库、自动提交 issue 或者查询项目数据，那么令牌就能用来认证你的身份。这种情况下，令牌相当于告诉 GitHub：“我是某某某，我有权限这么做。”</p>
+<h3 id="6-简化团队协作和自动化工作流">6. 简化团队协作和自动化工作流</h3>
+<p>在团队开发中，可能需要配置一些持续集成（CI/CD）工具，比如 Jenkins 或者 GitHub Actions，用来自动化测试、构建和部署代码。令牌可以让这些工具安全地访问团队的代码库，而不需要每次都输入密码。</p>
+
+                </div>
+              </div>
+              
+                <a class="right" href="http://discovery-ai.online/post/ru-he-zai-github-zhong-huo-qu-ge-ren-fang-wen-ling-pai/">
+                  <div class="feature-container" style="background-image: url('http://discovery-ai.online/post-images/ru-he-zai-github-zhong-huo-qu-ge-ren-fang-wen-ling-pai.png')">
+                  </div>
+                </a>
+              
+            </article>
+          
+
+          <div class="pagination-container">
+  
+  
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+
+
+  </body>
+</html>

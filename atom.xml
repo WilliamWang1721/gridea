@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>http://discovery-ai.online</id>
+    <title>Zero Geometry零度几何</title>
+    <updated>2025-01-29T12:18:14.559Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="http://discovery-ai.online"/>
+    <link rel="self" href="http://discovery-ai.online/atom.xml"/>
+    <logo>http://discovery-ai.online/images/avatar.png</logo>
+    <icon>http://discovery-ai.online/favicon.ico</icon>
+    <rights>All rights reserved 2025, Zero Geometry零度几何</rights>
+    <entry>
+        <title type="html"><![CDATA[如何在 GitHub 中获取个人访问令牌]]></title>
+        <id>http://discovery-ai.online/post/ru-he-zai-github-zhong-huo-qu-ge-ren-fang-wen-ling-pai/</id>
+        <link href="http://discovery-ai.online/post/ru-he-zai-github-zhong-huo-qu-ge-ren-fang-wen-ling-pai/">
+        </link>
+        <updated>2025-01-29T11:13:09.000Z</updated>
+        <summary type="html"><![CDATA[<p>个人访问令牌（Personal Access Token，简称 PAT）是用于验证 GitHub API 请求的密钥，类似于密码。你可以通过以下步骤生成一个令牌。</p>
+<h2 id="令牌的作用是什么">令牌的作用是什么？</h2>
+<p>通俗来讲，GitHub 的个人访问令牌（PAT）是一把“钥匙”，它可以用来打开和操作你的 GitHub 账户，特别是在你用工具、脚本或者其他软件访问 GitHub 时。</p>
+<h3 id="1-用于代替密码登录">1. 用于代替密码登录</h3>
+<p>如果你用 Git 命令行工具操作 GitHub，比如上传代码（git push）或者下载代码（git pull），GitHub 不再允许直接输入账户密码。令牌可以用来代替密码，确保这些操作的安全性。</p>
+<p>举个例子：当你在终端里执行 git push 上传代码时，GitHub 会提示你输入用户名和密码。如果使用令牌，你就把这个令牌当作密码输入就行了。比起用密码，这样更安全。</p>
+<h3 id="2-让工具和软件连接-github">2. 让工具和软件连接 GitHub</h3>
+<p>很多开发工具和服务，比如 VSCode、Jenkins、GitHub Actions、PyCharm 或者一些自动化脚本，都需要连接你的 GitHub 账户。用令牌可以让这些工具安全地访问你的账户，而不需要暴露你的真实密码。</p>
+<h3 id="3-控制权限更加安全">3. 控制权限，更加安全</h3>
+<p>一个令牌可以被设置成只允许做特定的事情。比如，你可以创建一个令牌，只允许它查看仓库，而不允许它删除或修改代码。这就像你给别人一把“客人钥匙”，这把钥匙只能开客房的门，而不能开主卧或者保险箱。</p>
+<h3 id="4-设置有效期防止滥用">4. 设置有效期，防止滥用</h3>
+<p>令牌可以设置一个“到期时间”。比如，你可以设置令牌只有效 30 天。这样，如果令牌被泄露或者你不再需要它了，过期后就自动失效了。这比用密码更加安全。</p>
+<h3 id="5-api-操作的身份验证">5. API 操作的身份验证</h3>
+<p>如果你是程序员，想写脚本自动完成一些工作，比如批量创建仓库、自动提交 issue 或者查询项目数据，那么令牌就能用来认证你的身份。这种情况下，令牌相当于告诉 GitHub：“我是某某某，我有权限这么做。”</p>
+<h3 id="6-简化团队协作和自动化工作流">6. 简化团队协作和自动化工作流</h3>
+<p>在团队开发中，可能需要配置一些持续集成（CI/CD）工具，比如 Jenkins 或者 GitHub Actions，用来自动化测试、构建和部署代码。令牌可以让这些工具安全地访问团队的代码库，而不需要每次都输入密码。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>个人访问令牌（Personal Access Token，简称 PAT）是用于验证 GitHub API 请求的密钥，类似于密码。你可以通过以下步骤生成一个令牌。</p>
+<h2 id="令牌的作用是什么">令牌的作用是什么？</h2>
+<p>通俗来讲，GitHub 的个人访问令牌（PAT）是一把“钥匙”，它可以用来打开和操作你的 GitHub 账户，特别是在你用工具、脚本或者其他软件访问 GitHub 时。</p>
+<h3 id="1-用于代替密码登录">1. 用于代替密码登录</h3>
+<p>如果你用 Git 命令行工具操作 GitHub，比如上传代码（git push）或者下载代码（git pull），GitHub 不再允许直接输入账户密码。令牌可以用来代替密码，确保这些操作的安全性。</p>
+<p>举个例子：当你在终端里执行 git push 上传代码时，GitHub 会提示你输入用户名和密码。如果使用令牌，你就把这个令牌当作密码输入就行了。比起用密码，这样更安全。</p>
+<h3 id="2-让工具和软件连接-github">2. 让工具和软件连接 GitHub</h3>
+<p>很多开发工具和服务，比如 VSCode、Jenkins、GitHub Actions、PyCharm 或者一些自动化脚本，都需要连接你的 GitHub 账户。用令牌可以让这些工具安全地访问你的账户，而不需要暴露你的真实密码。</p>
+<h3 id="3-控制权限更加安全">3. 控制权限，更加安全</h3>
+<p>一个令牌可以被设置成只允许做特定的事情。比如，你可以创建一个令牌，只允许它查看仓库，而不允许它删除或修改代码。这就像你给别人一把“客人钥匙”，这把钥匙只能开客房的门，而不能开主卧或者保险箱。</p>
+<h3 id="4-设置有效期防止滥用">4. 设置有效期，防止滥用</h3>
+<p>令牌可以设置一个“到期时间”。比如，你可以设置令牌只有效 30 天。这样，如果令牌被泄露或者你不再需要它了，过期后就自动失效了。这比用密码更加安全。</p>
+<h3 id="5-api-操作的身份验证">5. API 操作的身份验证</h3>
+<p>如果你是程序员，想写脚本自动完成一些工作，比如批量创建仓库、自动提交 issue 或者查询项目数据，那么令牌就能用来认证你的身份。这种情况下，令牌相当于告诉 GitHub：“我是某某某，我有权限这么做。”</p>
+<h3 id="6-简化团队协作和自动化工作流">6. 简化团队协作和自动化工作流</h3>
+<p>在团队开发中，可能需要配置一些持续集成（CI/CD）工具，比如 Jenkins 或者 GitHub Actions，用来自动化测试、构建和部署代码。令牌可以让这些工具安全地访问团队的代码库，而不需要每次都输入密码。</p>
+<!-- more -->
+<h2 id="如何获得令牌">如何获得令牌？</h2>
+<h3 id="步骤-1登录-github-账户">步骤 1：登录 GitHub 账户</h3>
+<p>打开浏览器，访问 GitHub 官网。</p>
+<p>使用你的 GitHub 用户名和密码登录。</p>
+<h3 id="步骤-2进入开发者设置">步骤 2：进入开发者设置</h3>
+<p>点击右上角的个人头像图标。</p>
+<p>在下拉菜单中选择 Settings（设置）。</p>
+<figure data-type="image" tabindex="1"><img src="http://discovery-ai.online/post-images/1738150335647.png" alt="" loading="lazy"></figure>
+<p>在左侧导航栏中，滚动到 Developer settings（开发者设置）并点击。</p>
+<figure data-type="image" tabindex="2"><img src="http://discovery-ai.online/post-images/1738150354626.png" alt="" loading="lazy"></figure>
+<h3 id="步骤-3选择-personal-access-tokens">步骤 3：选择 Personal Access Tokens</h3>
+<p>在 Developer settings 页面，选择 Personal access tokens。</p>
+<p>点击 Tokens (classic)。</p>
+<figure data-type="image" tabindex="3"><img src="http://discovery-ai.online/post-images/1738150388659.png" alt="" loading="lazy"></figure>
+<h3 id="步骤-4生成新的令牌">步骤 4：生成新的令牌</h3>
+<p>点击页面上的 Generate new token 按钮。</p>
+<p>选择 Generate new token (classic)。</p>
+<figure data-type="image" tabindex="4"><img src="http://discovery-ai.online/post-images/1738150407765.png" alt="" loading="lazy"></figure>
+<h3 id="步骤-5配置令牌">步骤 5：配置令牌</h3>
+<p>在 Note 字段中输入令牌的描述（例如“ProjectX Access Token”）。</p>
+<p>在 Expiration 下拉菜单中选择令牌的有效期（例如“30 days”）。</p>
+<p>在权限部分（Scopes）勾选你需要的权限（例如：选择“repo”来访问仓库）。</p>
+<figure data-type="image" tabindex="5"><img src="http://discovery-ai.online/post-images/1738150434073.png" alt="" loading="lazy"></figure>
+<h3 id="步骤-6生成令牌并保存">步骤 6：生成令牌并保存</h3>
+<p>配置完成后，点击 Generate token 按钮。</p>
+<p>页面会显示生成的令牌。复制令牌，并将其保存到一个安全的位置（例如密码管理器），因为页面关闭后你将无法再次查看。</p>
+<h3 id="步骤-7使用令牌">步骤 7：使用令牌</h3>
+<p>你可以将令牌用作 GitHub API 的认证方式。例如：</p>
+<p>在命令行中，使用 git 命令时，可以用令牌代替密码。</p>
+<p>在工具或应用程序中配置 GitHub 访问权限时，也可以使用此令牌。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Hello Gridea]]></title>
+        <id>http://discovery-ai.online/post/hello-gridea/</id>
+        <link href="http://discovery-ai.online/post/hello-gridea/">
+        </link>
+        <updated>2018-12-11T16:00:00.000Z</updated>
+        <summary type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
+✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
+✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
+<!-- more -->
+<p><a href="https://github.com/getgridea/gridea">Github</a><br>
+<a href="https://gridea.dev/">Gridea 主页</a><br>
+<a href="https://fehey.com/">示例网站</a></p>
+<h2 id="特性">特性👇</h2>
+<p>📝  你可以使用最酷的 <strong>Markdown</strong> 语法，进行快速创作</p>
+<p>🌉  你可以给文章配上精美的封面图和在文章任意位置插入图片</p>
+<p>🏷️  你可以对文章进行标签分组</p>
+<p>📋  你可以自定义菜单，甚至可以创建外部链接菜单</p>
+<p>💻  你可以在 <strong>Windows</strong>，<strong>MacOS</strong> 或 <strong>Linux</strong> 设备上使用此客户端</p>
+<p>🌎  你可以使用 <strong>𝖦𝗂𝗍𝗁𝗎𝖻 𝖯𝖺𝗀𝖾𝗌</strong> 或 <strong>Coding Pages</strong> 向世界展示，未来将支持更多平台</p>
+<p>💬  你可以进行简单的配置，接入 <a href="https://github.com/gitalk/gitalk">Gitalk</a> 或 <a href="https://github.com/SukkaW/DisqusJS">DisqusJS</a> 评论系统</p>
+<p>🇬🇧  你可以使用<strong>中文简体</strong>或<strong>英语</strong></p>
+<p>🌁  你可以任意使用应用内默认主题或任意第三方主题，强大的主题自定义能力</p>
+<p>🖥  你可以自定义源文件夹，利用 OneDrive、百度网盘、iCloud、Dropbox 等进行多设备同步</p>
+<p>🌱 当然 <strong>Gridea</strong> 还很年轻，有很多不足，但请相信，它会不停向前 🏃</p>
+<p>未来，它一定会成为你离不开的伙伴</p>
+<p>尽情发挥你的才华吧！</p>
+<p>😘 Enjoy~</p>
+]]></content>
+    </entry>
+</feed>
